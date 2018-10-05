@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modelo.bean.Contato;
+import modelo.bean.ContatoDAO;
 import javafx.event.ActionEvent;
 
 public class novoContatoController {
@@ -23,7 +25,8 @@ public class novoContatoController {
 			String name = this.name.getText();
 			String email = this.email.getText();
 			String phone = this.phone.getText();
-			System.out.println(name +" "+email+" "+phone);
+			ContatoDAO.insert(Contato.create(name, email, phone));
+			//System.out.println(name +" "+email+" "+phone);
 		}this.close();
 	}
 	public void open() {

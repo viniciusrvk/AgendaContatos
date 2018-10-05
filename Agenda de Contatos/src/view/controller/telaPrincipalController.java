@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import modelo.bean.ContatoDAO;
 
 public class telaPrincipalController implements Initializable{
     @FXML
@@ -29,7 +30,7 @@ public class telaPrincipalController implements Initializable{
 	@FXML
 	private Button get;
 	
-	ObservableList<String> list = FXCollections.observableArrayList("teste1", "teste2");
+	ObservableList<String> list = FXCollections.observableArrayList(ContatoDAO.getList());
 
 	// Event Listener on MenuItem.onAction
 	@FXML
